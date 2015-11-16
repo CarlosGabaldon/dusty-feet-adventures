@@ -4,7 +4,7 @@ Trail & outdoor adventure resources.
  - Trail information
  - Maps
  - Videos
- - Reviews & Ratings
  - Pro tips
+ - Reviews & Ratings
 
  http://dustyfeetadventures.com/
