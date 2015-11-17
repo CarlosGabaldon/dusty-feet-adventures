@@ -7,7 +7,7 @@ RSpec.feature "Users can view trail listings" do
 
   scenario "when visting the home page" do
     visit "/"
-    #expect to include @trails when visting the home page as collection
     expect(page).to have_content "Trails in your area"
+    expect(page).to have_selector "li", count: 2
   end
 end
