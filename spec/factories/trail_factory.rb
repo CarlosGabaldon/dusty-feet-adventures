@@ -1,6 +1,10 @@
 FactoryGirl.define do
-  factory :trail do
-    name "Ranch Trail #62"
-    description "An 8 mile (one way) trail that runs between Senator Highway and Walker Road."
+  factory :trail_one, class: Trail do
+    name "Trail one"
+    description "Trail description"
+  end
+
+  factory :trail_two, parent: :trail_one do
+    name "Trail two"
   end
 end
