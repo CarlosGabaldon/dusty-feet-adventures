@@ -18,6 +18,7 @@ RSpec.feature "Users can create trails" do
     click_button "Add Trail"
 
     expect(page).to have_content "Trail not Added."
-    expect(page.current_url).to eq new_trail_url
+    expect(page).to have_content "Name can't be blank"
+    expect(page).to have_content "Description can't be blank"
   end
 end
