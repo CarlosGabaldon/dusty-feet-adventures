@@ -9,12 +9,12 @@ RSpec.feature "Users can edit trails" do
     click_link @trail.name
     click_link "Edit Trail"
 
-    fill_in "Name", with: "Trail one updated"
+    fill_in "Name", with: "Trail three"
     fill_in "Description", with: "Trail one description updated."
     click_button "Update Trail"
 
     expect(page).to have_content "Trail Updated."
-    expect(page).to have_content "Trail one updated"
+    expect(page).to have_content "Trail three"
   end
 
 end

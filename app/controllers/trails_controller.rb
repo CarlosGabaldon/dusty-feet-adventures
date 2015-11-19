@@ -11,6 +11,22 @@ class TrailsController < ApplicationController
     @trail = Trail.new
   end
 
+  def edit
+    @trail = Trail.find(params[:id])
+  end
+
+  def update
+    @trail = Trail.find(params[:id])
+
+    if @trail.update(trail_params)
+      flash[:notice] = "Trail Updated."
+      redirect_to @trail
+    else
+      flash[:alert] = "Trail not Updated."
+      render 'edit'
+    end
+  end
+
   def create
     @trail = Trail.new(trail_params)
 
