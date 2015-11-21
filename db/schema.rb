@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117154043) do
+ActiveRecord::Schema.define(version: 20151121172519) do
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "geocode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "trails", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "location_id"
   end
+
+  add_index "trails", ["location_id"], name: "index_trails_on_location_id"
 
 end

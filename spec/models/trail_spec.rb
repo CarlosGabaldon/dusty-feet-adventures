@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Trail, type: :model do
-  it "is valid with name and description" do
+  it "is valid with name, description, and location" do
     trail = FactoryGirl.create(:trail_one)
     expect(trail).to be_valid
   end
