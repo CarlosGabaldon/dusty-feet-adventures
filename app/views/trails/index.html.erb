@@ -1,10 +1,10 @@
 <h1>Trails</h1>
 <h2>Trails in your area</h2>
 
-<ul>
+<ol>
   <% @trails.each do |trail| %>
     <li><%= link_to trail.name, trail_path(trail) %></li>
   <% end %>
-</ul>
+</ol>
 
 <%= link_to "Add new trail", new_trail_path %>
