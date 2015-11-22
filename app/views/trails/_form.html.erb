@@ -22,6 +22,11 @@
     <%= f.text_field :description %>
   </p>
 
+  <%= f.fields_for :location do |builder| %>
+    <%= builder.label :geocode %><br />
+    <%= builder.text_field :geocode %>
+  <% end -%>
+
   <p>Action: <%= action %>
 
   <%= f.submit "#{action} Trail" %>

@@ -9,5 +9,7 @@ RSpec.feature "Users can view trail listings" do
     visit "/"
     expect(page).to have_content "Trails"
     expect(page).to have_selector "li", count: 2
+    expect(page).to have_content @trails[0].name
+    expect(page).to have_content @trails[0].location.geocode
   end
 end

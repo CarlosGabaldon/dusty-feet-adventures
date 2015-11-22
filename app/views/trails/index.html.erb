@@ -3,7 +3,11 @@
 
 <ol>
   <% @trails.each do |trail| %>
-    <li><%= link_to trail.name, trail_path(trail) %></li>
+    <li>
+      <%= link_to trail.name, trail_path(trail) %> <br>
+      Geocode: <%= trail.location.geocode %>
+
+    </li>
   <% end %>
 </ol>
 

@@ -9,6 +9,7 @@ class TrailsController < ApplicationController
 
   def new
     @trail = Trail.new
+    @trail.build_location
   end
 
   def edit
@@ -41,7 +42,8 @@ class TrailsController < ApplicationController
 
   private
   def trail_params
-    params.require(:trail).permit(:name, :description)
+    params.require(:trail).permit(:name, :description,
+      location_attributes: [:id, :geocode])
   end
 
 end
