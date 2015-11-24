@@ -23,7 +23,7 @@ RSpec.feature "Users can edit trails" do
     expect(page).to have_content "Name can't be blank"
   end
 
-  scenario "with when clicking cancel return to trail listing" do
+  scenario "with when clicking cancel return to trail detail" do
     click_link "Cancel"
     expect(page.current_url).to eq trail_url(@trail)
   end

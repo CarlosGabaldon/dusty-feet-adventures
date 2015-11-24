@@ -22,4 +22,10 @@ RSpec.feature "Users can create trails" do
     expect(page).to have_content "Name can't be blank"
     expect(page).to have_content "Description can't be blank"
   end
+
+  scenario "when clicking cancel return to trail listing" do
+    click_link "Cancel"
+
+    expect(page.current_url).to eq trails_url
+  end
 end
