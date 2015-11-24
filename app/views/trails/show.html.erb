@@ -1,6 +1,6 @@
 <h2><%= @trail.name %></h2>
 
-<p><%= image_tag @map_uri %>
+<p><%= image_tag @map_uri, id: "map_#{@trail.id}" %>
 
 <p><%= @trail.description %> </p>
 
