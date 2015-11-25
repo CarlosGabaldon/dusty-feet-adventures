@@ -1,6 +1,10 @@
 <h2><%= @trail.name %></h2>
 
-<p><%= image_tag @map_uri, id: "map_#{@trail.id}" %>
+<p>
+  <%= link_to @gmap.maps_url, target: "_blank" do %>
+    <%= image_tag @gmap.static_map_uri, id: "map_#{@trail.id}" %>
+  <% end %>
+</p>
 
 <p><%= @trail.description %> </p>
 

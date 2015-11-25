@@ -5,7 +5,7 @@ class TrailsController < ApplicationController
 
   def show
     @trail = Trail.find(params[:id])
-    @map_uri = GoogleMaps.uri(@trail.location.geocode)
+    @gmap = GoogleMaps.new(@trail.location.geocode)
   end
 
   def new
