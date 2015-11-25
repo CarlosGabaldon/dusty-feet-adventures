@@ -52,7 +52,7 @@ class TrailsController < ApplicationController
     api_key = "key=#{Rails.configuration.x.google_api_key}"
     center = "center=#{geocode}"
     zoom = "zoom=14&scale=false&size=600x300"
-    map_type = "maptype=roadmap"
+    map_type = "maptype=hybrid"
     format = "format=png"
     visual_refresh = "visual_refresh=true"
     markers = "markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C#{geocode}"
