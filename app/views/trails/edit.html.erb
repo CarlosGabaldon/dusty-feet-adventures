@@ -1,5 +1,3 @@
 <h1>Edit Trail</h1>
 
-<%= link_to "Cancel", trail_path %>
-
-<%= render "form", trail: @trail, action: "Update" %>
+<%= render "form", trail: @trail, action: "Update", cancel_path: trail_path %>
