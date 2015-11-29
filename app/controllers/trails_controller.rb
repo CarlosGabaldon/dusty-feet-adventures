@@ -45,6 +45,7 @@ class TrailsController < ApplicationController
   private
   def trail_params
     params.require(:trail).permit(:name, :description,
-      location_attributes: [:id, :geocode], images_attributes: [:id, :url])
+      location_attributes: [:id, :geocode],
+      images_attributes: [:id, :url])
   end
 end
