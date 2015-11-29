@@ -23,11 +23,23 @@
   </p>
 
   <p>
-    <%= f.fields_for :location do |builder| %>
-      <%= builder.label :geocode %><br />
-      <%= builder.text_field :geocode %>
+    <%= f.fields_for :location do |location_form| %>
+      <%= location_form.label :geocode %><br />
+      <%= location_form.text_field :geocode %>
     <% end %>
- </p>
+  </p>
+
+  <p>
+    <h3>Images:</h3>
+    <ol>
+      <%= f.fields_for :images do |images_form| %>
+        <li>
+        <%= images_form.label :url %>
+        <%= images_form.text_field :url %>
+        </li>
+      <% end %>
+    </ol>
+  </p>
 
   <%= link_to "Cancel", cancel_path %>
   <%= f.submit "#{action} Trail" %>

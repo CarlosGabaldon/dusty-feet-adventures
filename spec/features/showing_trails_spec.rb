@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Users should be able to view trail details" do
   before do
-    @trail = create(:trail_one)
+    @trail = create(:trail_with_images)
     visit '/'
     click_link @trail.name
   end
@@ -12,6 +12,7 @@ RSpec.feature "Users should be able to view trail details" do
     expect(page).to have_content @trail.location.geocode
     expect(page).to have_css "img[id*='map_#{@trail.id}']"
     expect(page).to have_css "a[href*='#{@trail.location.geocode}']"
+    expect(page).to have_css "img[src='#{@trail.images[0].url}']"
   end
 
   scenario "when clicking 'all' view trail listing page" do

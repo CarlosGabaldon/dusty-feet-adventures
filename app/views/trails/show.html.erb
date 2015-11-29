@@ -10,6 +10,10 @@
 
 <p><%= @trail.location.geocode %> </p>
 
+<% @trail.images.each do |image| %>
+  <p><%= image_tag image.url %></p>
+<% end %>
+
 <%= link_to "Edit Trail", edit_trail_path(@trail) %>
 
 <%= link_to "All Trails", trails_path %>
