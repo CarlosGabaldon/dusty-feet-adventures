@@ -4,8 +4,9 @@
   <% @trails.each do |trail| %>
     <li>
       <%= link_to trail.name, trail_path(trail) %> <br>
-      Geocode: <%= trail.location.geocode %>
-
+      <% if trail.images.any? %>
+        <%= image_tag trail.images.first.url, size: "400x300" %>
+      <% end %>
     </li>
   <% end %>
 </ol>
