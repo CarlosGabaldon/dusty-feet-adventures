@@ -11,12 +11,12 @@ class TrailsController < ApplicationController
   def new
     @trail = Trail.new
     @trail.build_location
-    4.times {@trail.images.build}
+    build_images
   end
 
   def edit
     @trail = Trail.find(params[:id])
-    4.times {@trail.images.build} unless @trail.images.any?
+    build_images unless @trail.images.any?
   end
 
   def update
@@ -48,5 +48,9 @@ class TrailsController < ApplicationController
     params.require(:trail).permit(:name, :description,
       location_attributes: [:id, :geocode],
       images_attributes: [:id, :url])
+  end
+
+  def build_images
+    4.times {@trail.images.build}
   end
 end
