@@ -16,6 +16,7 @@ class TrailsController < ApplicationController
 
   def edit
     @trail = Trail.find(params[:id])
+    4.times {@trail.images.build} unless @trail.images.any?
   end
 
   def update
