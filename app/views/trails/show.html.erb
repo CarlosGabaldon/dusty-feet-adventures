@@ -1,4 +1,6 @@
 <h2><%= @trail.name %></h2>
+<%= link_to "Edit Trail", edit_trail_path(@trail) %>
+<%= link_to "All Trails", trails_path %>
 
 <p>
   <%= link_to @gmap.maps_url, target: "_blank" do %>
@@ -13,7 +15,3 @@
 <% @trail.images.each do |image| %>
   <p><%= image_tag image.url %></p>
 <% end %>
-
-<%= link_to "Edit Trail", edit_trail_path(@trail) %>
-
-<%= link_to "All Trails", trails_path %>
