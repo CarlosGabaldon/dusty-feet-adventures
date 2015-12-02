@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128200959) do
+ActiveRecord::Schema.define(version: 20151202172423) do
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151128200959) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "location_id"
+    t.text     "path"
   end
 
   add_index "trails", ["location_id"], name: "index_trails_on_location_id"
