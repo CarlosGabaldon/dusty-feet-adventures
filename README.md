@@ -8,11 +8,13 @@ Trail & outdoor adventure resources (MVP)
   - Description of trail => complete
   - Map of trail location created from Geocode (LatLng coords) => complete
   - Images of trail => complete
-  - Trail route map created from GPX file => started
+  - Trail route map created from GPX file => in progress
   - Videos of trail corresponding to GPX waypoints => not started
   - Pro tips => not started
   - Reviews & Ratings => not started
 
   - To Do
-   - Admin map tool for creating Geocode, currently using google maps to copy/paste  geocode when creating a trail
+   - Admin trail map tool for creating:
+    - Location geocode (lat/long) markers coords
+    - Trail geocode path coords (currently using google maps to copy/paste geocodes when creating a trail)
    - CSS design of site
