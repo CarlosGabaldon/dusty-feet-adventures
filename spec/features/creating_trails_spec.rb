@@ -9,6 +9,7 @@ RSpec.feature "Users can create trails" do
     fill_in "Name", with: "Bright Angel Trail"
     fill_in "Description", with: "A very busy trail that runs to the river."
     fill_in "Geocode", with: "34.575597, -112.427461"
+    fill_in "Path", with: "34.549089, -112.537448|34.551259, -112.535793"
     click_button "Add Trail"
 
     expect(page).to have_content "Trail Added."
