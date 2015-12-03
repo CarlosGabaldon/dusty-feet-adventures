@@ -3,10 +3,18 @@
 <%= link_to "All Trails", trails_path %>
 
 <p>
-  <%= link_to @gmap.maps_url, target: "_blank" do %>
-    <%= image_tag @gmap.static_map_uri, id: "map_#{@trail.id}" %>
+  <h3>Trail Location</h3>
+  <%= link_to @gmap.map_url, target: "_blank" do %>
+    <%= image_tag @gmap.map_with_marker_uri, id: "map_#{@trail.id}" %>
   <% end %>
 </p>
+
+<% if @trail.path %>
+  <p>
+    <h3>Trail Path</h3>
+    <%= image_tag @gmap.map_with_path_uri, id: "map_path_#{@trail.id}" %>
+  </p>
+<% end %>
 
 <p><%= @trail.description %> </p>
 

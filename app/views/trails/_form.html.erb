@@ -30,6 +30,11 @@
   </p>
 
   <p>
+    <%= f.label :path %><br>
+    <%= f.text_field :path %>
+  </p>
+
+  <p>
     <h3>Images:</h3>
     <ol>
       <%= f.fields_for :images do |images_form| %>

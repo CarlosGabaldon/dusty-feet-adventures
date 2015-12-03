@@ -1,9 +1,13 @@
 FactoryGirl.define do
-  factory :trail_one, class: Trail do
-    name "Trail one"
+  # Trail factories
+  factory :trail, class: Trail do
+    name "Trail"
     description "Trail description"
     location
+  end
 
+  factory :trail_one, parent: :trail do
+    name "Trail one"
     factory :trail_with_images do
       transient do
         images_count 5
@@ -22,6 +26,11 @@ FactoryGirl.define do
   factory :trail_missing_name, parent: :trail_one do
     name ""
   end
+
+  factory :trail_with_path, parent: :trail do
+    path  "34.549089, -112.537448|34.551259, -112.535793"
+  end
+ # End Trail factories
 
   factory :location, class: Location do
     geocode "34.575597, -112.427461"

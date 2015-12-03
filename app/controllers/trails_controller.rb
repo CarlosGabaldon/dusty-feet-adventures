@@ -5,7 +5,7 @@ class TrailsController < ApplicationController
 
   def show
     @trail = Trail.find(params[:id])
-    @gmap = GoogleMaps.new(@trail.location.geocode)
+    @gmap = GoogleMaps.new(@trail.location.geocode, @trail.path)
   end
 
   def new
@@ -45,7 +45,7 @@ class TrailsController < ApplicationController
 
   private
   def trail_params
-    params.require(:trail).permit(:name, :description,
+    params.require(:trail).permit(:name, :description, :path,
       location_attributes: [:id, :geocode],
       images_attributes: [:id, :url])
   end
