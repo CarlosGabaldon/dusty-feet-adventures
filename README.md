@@ -1,7 +1,5 @@
 ## Dusty Feet Adventures
 
-## Code Status
-
 [![Build Status](https://travis-ci.org/CarlosGabaldon/dusty-feet-adventures.svg?branch=master)](https://travis-ci.org/CarlosGabaldon/dusty-feet-adventures)
 
 
