@@ -18,6 +18,6 @@ Trail & outdoor adventure resources (MVP)
 
  - To Do
    - Admin trail map tool for creating:
-    - Location geocode (lat/long) markers coords
-    - Trail geocode path coords (currently using google maps to copy/paste geocodes when creating a trail)
+      - Location geocode (lat/long) markers coords
+      - Trail geocode path coords (currently using google maps to copy/paste geocodes when creating a trail)
    - CSS design of site
