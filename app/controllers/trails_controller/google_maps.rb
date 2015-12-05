@@ -42,9 +42,5 @@ class TrailsController
     def map_url
       "http://maps.google.com/?q=#{@markers_lat_long_coords}"
     end
-
-    def map_with_path_url
-
-    end
   end
 end
