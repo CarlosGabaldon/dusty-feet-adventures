@@ -34,6 +34,7 @@ FactoryGirl.define do
 
   factory :location, class: Location do
     lat_long_coords "34.575597, -112.427461"
+    state "AZ"
   end
 
   factory :image, class: Image do

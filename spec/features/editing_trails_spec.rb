@@ -11,6 +11,7 @@ RSpec.feature "Users can edit trails" do
   scenario "with valid attributes" do
     fill_in "Name", with: "Trail three"
     fill_in "Description", with: "Trail one description updated."
+    select "AZ", from: "trail[location_attributes][state]"
     click_button "Update Trail"
 
     expect(page).to have_content "Trail Updated."

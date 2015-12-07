@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207173934) do
+ActiveRecord::Schema.define(version: 20151207185440) do
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20151207173934) do
     t.string   "lat_long_coords"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "state"
   end
 
   create_table "trails", force: :cascade do |t|

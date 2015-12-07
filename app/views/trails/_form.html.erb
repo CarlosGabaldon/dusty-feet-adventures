@@ -22,10 +22,15 @@
     <%= f.text_field :description %>
   </p>
 
-  <p>
     <%= f.fields_for :location do |location_form| %>
+    <p>
       <%= location_form.label :lat_long_coords %><br />
-      <%= location_form.text_field :lat_long_coords %>
+      <%= location_form.text_field :lat_long_coords %></br>
+    </p>
+    <p>
+      <%= location_form.label :state %>
+      <%= location_form.select :state, ["AZ", "CA"] %>
+    </p>
     <% end %>
   </p>
 
