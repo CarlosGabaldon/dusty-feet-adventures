@@ -21,3 +21,6 @@
 
 # Ignore debug history
 .byebug_history
+
+# Ignore OS X files
+.DS_Store

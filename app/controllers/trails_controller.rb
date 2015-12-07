@@ -9,12 +9,14 @@ class TrailsController < ApplicationController
   end
 
   def new
+    build_lookups
     @trail = Trail.new
     @trail.build_location
     build_images
   end
 
   def edit
+    build_lookups
     @trail = Trail.find(params[:id])
     build_images unless @trail.images.any?
   end
@@ -27,6 +29,7 @@ class TrailsController < ApplicationController
       redirect_to @trail
     else
       flash[:alert] = "Trail not Updated."
+      build_lookups
       render 'edit'
     end
   end
@@ -39,6 +42,7 @@ class TrailsController < ApplicationController
       redirect_to @trail
     else
       flash[:alert] = "Trail not Added."
+      build_lookups
       render 'new'
     end
   end
@@ -48,6 +52,10 @@ class TrailsController < ApplicationController
     params.require(:trail).permit(:name, :description, :path,
       location_attributes: [:id, :lat_long_coords, :state],
       images_attributes: [:id, :url])
+  end
+
+  def build_lookups
+    @states = LookUp::STATES
   end
 
   def build_images
