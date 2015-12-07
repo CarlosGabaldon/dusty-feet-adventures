@@ -33,7 +33,7 @@ FactoryGirl.define do
  # End Trail factories
 
   factory :location, class: Location do
-    geocode "34.575597, -112.427461"
+    lat_long_coords "34.575597, -112.427461"
   end
 
   factory :image, class: Image do

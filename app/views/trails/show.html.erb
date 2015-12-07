@@ -18,7 +18,7 @@
 
 <p><%= @trail.description %> </p>
 
-<p>Geocode (latitude,longitude)<%= @trail.location.geocode %> </p>
+<p>Latitude,longitude:<%= @trail.location.lat_long_coords %> </p>
 
 <% @trail.images.each do |image| %>
   <p><%= image_tag image.url %></p>
