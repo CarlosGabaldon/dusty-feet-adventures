@@ -1,0 +1,4 @@
+<%= link_to "All Trails", trails_path %>
+<% @states.each do |state| %>
+  <%= link_to state[0], trails_location_path(state[1]) %>
+<% end %>
