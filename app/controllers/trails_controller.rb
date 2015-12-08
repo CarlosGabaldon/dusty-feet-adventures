@@ -47,6 +47,13 @@ class TrailsController < ApplicationController
     end
   end
 
+  ## Filter actions ##
+  def location
+    @state = params[:state]
+    @trails = Trail.in_state(@state)
+    render 'index'
+  end
+
   private
   def trail_params
     params.require(:trail).permit(:name, :description, :path,
