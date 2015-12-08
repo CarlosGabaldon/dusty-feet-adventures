@@ -1,4 +1,5 @@
 class TrailsController < ApplicationController
+  before_action :build_lookups
   def index
     @trails = Trail.all
   end
@@ -9,7 +10,6 @@ class TrailsController < ApplicationController
   end
 
   def new
-    build_lookups
     @trail = Trail.new
     @trail.build_location
     build_images

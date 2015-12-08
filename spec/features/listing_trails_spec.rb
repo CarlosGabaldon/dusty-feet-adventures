@@ -14,8 +14,8 @@ RSpec.feature "Users can view trail listings" do
   end
 
   scenario "by filtering by state" do
-    visit "/trails/location/AZ"
+    visit "/"
+    click_link "Arizona"
     expect(page).to have_content "State: AZ"
-    #expect(page).to have_selector "li", count: 1
   end
 end
