@@ -12,4 +12,10 @@ RSpec.feature "Users can view trail listings" do
     expect(page).to have_content @trails.first.name
     expect(page).to have_css "img[src='#{@trails.first.images.first.url}']"
   end
+
+  scenario "by filtering by state" do
+    visit "/trails/location/AZ"
+    expect(page).to have_content "State: AZ"
+    #expect(page).to have_selector "li", count: 1
+  end
 end

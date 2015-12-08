@@ -1,6 +1,8 @@
 <h1>Trails</h1>
 
-<h3>State: <%= @state %>
+<% if @state %>
+  <h3>State: <%= @state %> </h3>
+<% end %>
 
 <ol>
   <% @trails.each do |trail| %>
@@ -9,6 +11,7 @@
       <% if trail.images.any? %>
         <%= image_tag trail.images.first.url, size: "400x300" %>
       <% end %>
+      <p>Trail Location: <%= trail.location.state %></p>
     </li>
   <% end %>
 </ol>
