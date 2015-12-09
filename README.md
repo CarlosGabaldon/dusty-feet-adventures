@@ -11,6 +11,7 @@ Trail & outdoor adventure resources (MVP)
   - Description of trail => complete
   - Map of trail location created from Geocode (LatLng coords) => complete
   - Images of trail => complete
+  - Filtering of trails by US state => complete
   - Trail route map created from GPX file => in progress
   - Pro tips => not started
   - Reviews & Ratings => not started
