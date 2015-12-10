@@ -24,3 +24,6 @@
 
 # Ignore OS X files
 .DS_Store
+
+# Ignore uploaded files
+/public/uploads/
