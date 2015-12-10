@@ -26,4 +26,4 @@
 .DS_Store
 
 # Ignore uploaded files
-/public/uploads/
+/public/uploads/*.xml
