@@ -1,5 +1,7 @@
 class TrailsController < ApplicationController
+  include Uploadable
   before_action :build_lookups
+
   def index
     @trails = Trail.all
   end
@@ -36,6 +38,7 @@ class TrailsController < ApplicationController
 
   def create
     @trail = Trail.new(trail_params)
+    @trail.gpx_file_path = process_gpx
 
     if @trail.save
       flash[:notice] = "Trail Added."
@@ -56,9 +59,13 @@ class TrailsController < ApplicationController
 
   private
   def trail_params
-    params.require(:trail).permit(:name, :description, :path,
+    params.require(:trail).permit(:name, :description, :path, :gpx_file,
       location_attributes: [:id, :lat_long_coords, :state],
       images_attributes: [:id, :url])
+  end
+
+  def process_gpx
+    upload_file(params[:gpx_file]) if params[:gpx_file]
   end
 
   def build_lookups

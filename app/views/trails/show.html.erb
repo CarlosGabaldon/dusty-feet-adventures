@@ -11,6 +11,10 @@
 
 <p>State: <%= @trail.location.state %></p>
 
+<% if @trail.gpx_file_path %>
+  <p>GPX path: <%= @trail.gpx_file_path %></p>
+<% end %>
+
 <% if @trail.path %>
   <p>
     <h3>Trail Path</h3>
