@@ -1,5 +1,8 @@
 <h1>Trails</h1>
 <%= render "states", states: @states %>
+<p>
+<%= link_to "Add new trail", new_trail_path %>
+</p>
 
 <% if @state %>
   <h3>State: <%= @state %> </h3>
@@ -16,5 +19,3 @@
     </li>
   <% end %>
 </ol>
-
-<%= link_to "Add new trail", new_trail_path %>

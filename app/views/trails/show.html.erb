@@ -7,6 +7,9 @@
   <%= link_to @gmap.map_url, target: "_blank" do %>
     <%= image_tag @gmap.map_with_marker_uri, id: "map_#{@trail.id}" %>
   <% end %>
+
+  <p>Latitude, longitude: <%= @trail.location.lat_long_coords %> </p>
+
 </p>
 
 <p>State: <%= @trail.location.state %></p>
@@ -23,8 +26,6 @@
 <% end %>
 
 <p><%= @trail.description %> </p>
-
-<p>Latitude,longitude:<%= @trail.location.lat_long_coords %> </p>
 
 <% @trail.images.each do |image| %>
   <p><%= image_tag image.url %></p>
