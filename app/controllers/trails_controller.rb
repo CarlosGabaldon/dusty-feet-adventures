@@ -62,7 +62,7 @@ class TrailsController < ApplicationController
 
   private
   def trail_params
-    params.require(:trail).permit(:name, :description, :path, :gpx_file, :gpx_file_path,
+    params.require(:trail).permit(:name, :description, :path, :gpx_file,
       location_attributes: [:id, :lat_long_coords, :state],
       images_attributes: [:id, :url])
   end
