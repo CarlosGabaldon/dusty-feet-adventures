@@ -25,7 +25,9 @@ class TrailsController < ApplicationController
 
   def update
     @trail = Trail.find(params[:id])
-    params.merge!(gpx_file_path: process_gpx)
+    if file_path = process_gpx
+      @trail.gpx_file_path = file_path
+    end
 
     if @trail.update(trail_params)
       flash[:notice] = "Trail Updated."
@@ -40,7 +42,7 @@ class TrailsController < ApplicationController
   def create
     @trail = Trail.new(trail_params)
     @trail.gpx_file_path = process_gpx
-    
+
     if @trail.save
       flash[:notice] = "Trail Added."
       redirect_to @trail
