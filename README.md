@@ -1,8 +1,5 @@
 ## Dusty Feet Adventures
 
-[![Build Status](https://travis-ci.org/CarlosGabaldon/dusty-feet-adventures.svg?branch=master)](https://travis-ci.org/CarlosGabaldon/dusty-feet-adventures)
-
-
 http://dustyfeetadventures.com/
 
 Trail & outdoor adventure resources (MVP)
