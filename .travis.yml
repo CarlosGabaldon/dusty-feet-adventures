@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.2.3
+bundler_args: --without development production --quiet
+env:
+  - TEST_SUITE=features
+  - TEST_SUITE=controllers
+  - TEST_SUITE=helpers
+  - TEST_SUITE=models
+  - TEST_SUITE=routing
+  - TEST_SUITE=views
+script:
+  - bundle exec rspec spec/$TEST_SUITE/*
