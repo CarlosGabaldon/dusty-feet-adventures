@@ -5,10 +5,9 @@ rvm:
 before_install:
   - rvm @global do gem uninstall bundler -a -x
   - rvm @global do gem install bundler -v 1.10.6
-
 env:
   - TEST_SUITE=features
   - TEST_SUITE=controllers
   - TEST_SUITE=models
- script:
+script:
   - bundle exec rspec spec/$TEST_SUITE/*
