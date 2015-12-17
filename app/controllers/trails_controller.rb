@@ -25,9 +25,7 @@ class TrailsController < ApplicationController
 
   def update
     @trail = Trail.find(params[:id])
-    if file_path = process_gpx
-      @trail.gpx_file_path = file_path
-    end
+    process_gpx
 
     if @trail.update(trail_params)
       flash[:notice] = "Trail Updated."
@@ -41,7 +39,7 @@ class TrailsController < ApplicationController
 
   def create
     @trail = Trail.new(trail_params)
-    @trail.gpx_file_path = process_gpx
+    process_gpx
 
     if @trail.save
       flash[:notice] = "Trail Added."
@@ -68,7 +66,14 @@ class TrailsController < ApplicationController
   end
 
   def process_gpx
-    upload_file(params[:gpx_file]) if params[:gpx_file]
+    if params[:gpx_file]
+      if @trail.gpx_file_path = upload_file(params[:gpx_file])
+        gpx = TrailsController::GPX.new(file_path: @trail.gpx_file_path)
+        if route = gpx.parse_to_route
+          @trail.route = route
+        end
+      end
+    end
   end
 
   def build_lookups
