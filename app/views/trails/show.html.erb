@@ -18,7 +18,7 @@
   <p>GPX path: <%= @trail.gpx_file_path %></p>
 <% end %>
 
-<% if @trail.path %>
+<% if @trail.route %>
   <p>
     <h3>Trail Path</h3>
     <%= image_tag @gmap.map_with_path_uri, id: "map_path_#{@trail.id}" %>

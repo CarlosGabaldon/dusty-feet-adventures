@@ -27,8 +27,8 @@ FactoryGirl.define do
     name ""
   end
 
-  factory :trail_with_path, parent: :trail do
-    path  "34.549089, -112.537448|34.551259, -112.535793"
+  factory :trail_with_route, parent: :trail do
+    route  "34.549089, -112.537448|34.551259, -112.535793"
   end
  # End Trail factories
 

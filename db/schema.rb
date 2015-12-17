@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211162230) do
+ActiveRecord::Schema.define(version: 20151215180211) do
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20151211162230) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "location_id"
-    t.text     "path"
+    t.text     "route"
     t.string   "gpx_file_path"
   end
 

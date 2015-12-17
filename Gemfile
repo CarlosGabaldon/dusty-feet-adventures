@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Rails app configuration using ENV. https://github.com/laserlemon/figaro
 gem "figaro"
 
+# XML parser 
+gem 'nokogiri'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

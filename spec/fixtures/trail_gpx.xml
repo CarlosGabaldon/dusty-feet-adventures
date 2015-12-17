@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Garmin Connect"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2015-12-14T18:44:11.000Z</time>
+  </metadata>
+  <trk>
+    <name>Circle Trail</name>
+    <trkseg>
+      <trkpt lon="-112.536735" lat="34.549009">
+        <ele>1677.0</ele>
+        <time>2015-12-14T18:44:11.000Z</time>
+      </trkpt>
+      <trkpt lon="-112.536752" lat="34.550168">
+        <ele>1677.199951171875</ele>
+        <time>2015-12-14T18:44:17.000Z</time>
+      </trkpt>
+      <trkpt lon="-112.536408" lat="34.550480">
+        <ele>1676.800048828125</ele>
+        <time>2015-12-14T18:44:22.000Z</time>
+      </trkpt>
+      <trkpt lon="-112.535954" lat="34.551081">
+        <ele>1676.199951171875</ele>
+        <time>2015-12-14T18:44:27.000Z</time>
+      </trkpt>
+      <trkpt lon="-112.535701" lat="34.551267">
+        <ele>1675.5999755859375</ele>
+        <time>2015-12-14T18:44:34.000Z</time>
+      </trkpt>
+      <trkpt lon="-112.535205" lat="34.551143">
+        <ele>1675.4000244140625</ele>
+        <time>2015-12-14T18:44:39.000Z</time>
+      </trkpt>
+      <trkpt lon="-112.535149" lat="34.550753">
+        <ele>1674.800048828125</ele>
+        <time>2015-12-14T18:44:45.000Z</time>
+      </trkpt>
+      <trkpt lon="-112.535351" lat="34.550178">
+        <ele>1674.0</ele>
+        <time>2015-12-14T18:44:52.000Z</time>
+      </trkpt>
+      <trkpt lon="-112.536022" lat="34.549646">
+        <ele>1673.4000244140625</ele>
+        <time>2015-12-14T18:44:59.000Z</time>
+      </trkpt>
+      <trkpt lon="-112.536735" lat="34.549009">
+        <ele>1672.800048828125</ele>
+        <time>2015-12-14T18:45:02.000Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
