@@ -23,7 +23,7 @@ RSpec.describe TrailsController::GoogleMaps do
   it "has a properly formated map path api uri" do
     uri = "#{@map.parameters[:url]}#{@map.parameters[:autoscale]}&#{@map.parameters[:size]}"
     uri << "&#{@map.parameters[:map_type]}&#{@map.parameters[:format]}"
-    uri << "&#{@map.parameters[:visual_refresh]}&#{@map.parameters[:markers]}"
+    uri << "&#{@map.parameters[:visual_refresh]}"
     uri << "&#{@map.parameters[:path]}&#{@map.parameters[:api_key]}"
 
     expect(@map.map_with_path_uri).to eq uri

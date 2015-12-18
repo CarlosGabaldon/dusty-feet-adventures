@@ -35,7 +35,7 @@ class TrailsController
     def map_with_path_uri
       uri = "#{@parameters[:url]}#{@parameters[:autoscale]}&#{@parameters[:size]}"
       uri << "&#{@parameters[:map_type]}&#{@parameters[:format]}"
-      uri << "&#{@parameters[:visual_refresh]}&#{@parameters[:markers]}"
+      uri << "&#{@parameters[:visual_refresh]}"
       uri << "&#{@parameters[:path]}&#{@parameters[:api_key]}"
     end
 
