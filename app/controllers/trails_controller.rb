@@ -8,7 +8,8 @@ class TrailsController < ApplicationController
 
   def show
     @trail = Trail.find(params[:id])
-    @gmap = GoogleMaps.new(@trail.location.lat_long_coords, @trail.route)
+    @gmap = GoogleMaps.new(marker_coords: @trail.location.lat_long_coords,
+      route_coords: @trail.route)
   end
 
   def new

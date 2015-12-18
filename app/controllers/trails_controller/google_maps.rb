@@ -4,9 +4,9 @@ class TrailsController
     attr_reader :markers_lat_long_coords
     attr_reader :path_lat_long_coords
 
-    def initialize(markers_lat_long_coords, path_lat_long_coords="")
-      @markers_lat_long_coords = markers_lat_long_coords
-      @path_lat_long_coords = path_lat_long_coords
+    def initialize(marker_coords:, route_coords: "")
+      @markers_lat_long_coords = marker_coords
+      @path_lat_long_coords = route_coords
       @parameters = {
         url: Rails.configuration.x.google_maps_static_api,
         api_key: "key=#{Rails.configuration.x.google_api_key}",

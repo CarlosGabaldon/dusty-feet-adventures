@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe TrailsController::GoogleMaps do
   before do
     @marker = "34.575597, -112.427461"
-    @path = "34.549089, -112.537448|34.551259, -112.535793"
-    @map = TrailsController::GoogleMaps.new(@marker, @path)
+    @route = "34.549089, -112.537448|34.551259, -112.535793"
+    @map = TrailsController::GoogleMaps.new(marker_coords: @marker, route_coords: @route)
   end
 
   it "has a properly formated map url" do
