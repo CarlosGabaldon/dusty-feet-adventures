@@ -14,6 +14,7 @@ Trail & outdoor adventure resources (MVP)
   - Trail route map created from GPX file => in progress
   - Pro tips => not started
   - Reviews & Ratings => not started
+  - Upgrade to Rails 5.0.0.beta1 => started on branch: upgrading_to_rails_5.0
 
  - To Do
    - Admin trail map tool for creating:
