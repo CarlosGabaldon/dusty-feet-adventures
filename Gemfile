@@ -22,12 +22,16 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
+
+# Use Puma as the app server
+gem 'puma'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Rails app configuration using ENV. https://github.com/laserlemon/figaro
 gem "figaro"
 
-# XML parser 
+# XML parser
 gem 'nokogiri'
 
 # Use ActiveModel has_secure_password
