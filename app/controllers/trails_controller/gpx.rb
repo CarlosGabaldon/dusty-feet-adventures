@@ -1,3 +1,12 @@
+# Ecapsulation class to extract out of controller GPX file parsing to a route
+# in the format of: [latitude, longitude|latitude, longitude] pairs
+# as in: "34.549089, -112.537448|34.551259, -112.535793"
+# Useage:
+#   In controller:
+#     gpx = TrailsController::GPX.new(file_path: @trail.gpx_file_path)
+#     if route = gpx.parse_to_route
+#       @trail.route = route
+#     end
 class TrailsController
   class GPX
     attr_reader :file_path

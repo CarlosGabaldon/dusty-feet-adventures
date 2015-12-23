@@ -1,3 +1,13 @@
+# Ecapsulation class to extract out of controller Google map formating code
+# for creating static map api calls.
+# Useage:
+#   In controller:
+#     @gmap = GoogleMaps.new(marker_coords: @trail.location.lat_long_coords,
+#        route_coords: @trail.route)
+#   In view:
+#     <%= link_to @gmap.map_url, target: "_blank" do %>
+#       <%= image_tag @gmap.map_with_marker_uri, id: "map_#{@trail.id}" %>
+#     <% end %>
 class TrailsController
   class GoogleMaps
     attr_reader :parameters
