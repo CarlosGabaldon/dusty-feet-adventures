@@ -24,6 +24,20 @@ class TrailsController < ApplicationController
     build_images unless @trail.images.any?
   end
 
+  def create
+    @trail = Trail.new(trail_params)
+    process_gpx
+
+    if @trail.save
+      flash[:notice] = "Trail Added."
+      redirect_to @trail
+    else
+      flash[:alert] = "Trail not Added."
+      build_lookups
+      render 'new'
+    end
+  end
+
   def update
     @trail = Trail.find(params[:id])
     process_gpx
@@ -38,18 +52,12 @@ class TrailsController < ApplicationController
     end
   end
 
-  def create
-    @trail = Trail.new(trail_params)
-    process_gpx
+  def destroy
+    @trail = Trail.find(params[:id])
+    @trail.destroy
 
-    if @trail.save
-      flash[:notice] = "Trail Added."
-      redirect_to @trail
-    else
-      flash[:alert] = "Trail not Added."
-      build_lookups
-      render 'new'
-    end
+    flash[:notice] = "Trail Deleted"
+    redirect_to trails_path
   end
 
   ## Filter actions ##
