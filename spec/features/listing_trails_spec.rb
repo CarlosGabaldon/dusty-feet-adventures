@@ -8,7 +8,8 @@ RSpec.feature "Users can view trail listings" do
   scenario "when visting the home page" do
     visit "/"
     expect(page).to have_content "Trails"
-    expect(page).to have_selector "li", count: 2
+    expect(page).to have_selector('li', :text => 'Trail one')
+    expect(page).to have_selector('li', :text => 'Trail two')
     expect(page).to have_content @trails.first.name
     expect(page).to have_css "img[src='#{@trails.first.images.first.url}']"
   end

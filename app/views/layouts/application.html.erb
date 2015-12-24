@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<ul>
+  <li class="<%= "active" if current_page?("/users/sign_up") %>">
+    <%= link_to "Sign up", new_user_registration_path %>
+  </li>
+</ul>
+
 <% flash.each do |key, message| %>
   <div class="#{key}"><%= message %></div>
 <% end %>
