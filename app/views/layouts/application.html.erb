@@ -9,9 +9,8 @@
 <body>
 <% if user_signed_in? %>
   <div>
-    <p>
-      Signed in as <%= current_user.email %>
-    </p>
+    <p>Signed in as <%= current_user.email %></p>
+    <p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
   </div>
 <% end %>
 
