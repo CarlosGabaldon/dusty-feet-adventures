@@ -7,15 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if user_signed_in? %>
+  <div>
+    <p>
+      Signed in as <%= current_user.email %>
+    </p>
+  </div>
+<% end %>
 
 <ul>
+  <% unless user_signed_in? %>
   <li class="<%= "active" if current_page?("/users/sign_up") %>">
     <%= link_to "Sign up", new_user_registration_path %>
   </li>
+  <li class="<%= "active" if current_page?("/users/sign_in") %>">
+    <%= link_to "Sign in", new_user_session_path %>
+  </li>
+  <% end %>
 </ul>
 
 <% flash.each do |key, message| %>
-  <div class="#{key}"><%= message %></div>
+  <div class="<%= key %>"><%= message %></div>
 <% end %>
 
 <%= yield %>
