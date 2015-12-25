@@ -11,6 +11,8 @@ Trail & outdoor adventure resources (MVP)
   - Map of trail location created from Geocode (LatLng coords) => complete
   - Images of trail => complete
   - Filtering of trails by US state => complete
+  - User Authentication => complete
+  - User Authorization => not started
   - Trail route map created from GPX file => in progress
   - Reviews & Ratings => not started
   - Upgrade to Rails 5.0.0.beta1 => started on branch: [upgrade_to_Rails5.0.0.beta1](https://github.com/CarlosGabaldon/dusty-feet-adventures/tree/upgrade_to_Rails5.0.0.beta1)
