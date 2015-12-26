@@ -19,7 +19,7 @@ RSpec.feature "Users can edit trails" do
   end
 
   scenario "with invalid attributes" do
-    fill_in "Name", with: ""
+    fill_in "Name", with: " "
     click_button "Update Trail"
     expect(page).to have_content "Name can't be blank"
   end
