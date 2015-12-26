@@ -48,8 +48,11 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara', '~> 2.4'
-  #gem 'factory_girl_rails', '~> 4.5'
+  gem 'capybara', github: 'jnicklas/capybara'
+  gem 'factory_girl_rails', '~> 4.5'
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
 end
 
 group :development do
