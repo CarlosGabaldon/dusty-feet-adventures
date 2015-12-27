@@ -15,7 +15,7 @@ Trail & outdoor adventure resources (MVP)
   - User Authorization => not started
   - Trail route map created from GPX file => in progress
   - Reviews & Ratings => not started
-  - Upgrade to Rails 5.0.0.beta1 => started on branch: [upgrade_to_Rails5.0.0.beta1](https://github.com/CarlosGabaldon/dusty-feet-adventures/tree/upgrade_to_Rails5.0.0.beta1)
+  - Upgrade to Rails 5.0.0.beta1 => complete
 
  - To Do
    - Admin trail map tool for creating:
