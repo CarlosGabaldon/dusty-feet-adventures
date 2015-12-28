@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Users can create trails" do
   before do
+    login_as create(:user, :admin)
     visit "/"
     click_link "Add new trail"
   end
