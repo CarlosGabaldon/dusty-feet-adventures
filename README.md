@@ -12,7 +12,7 @@ Trail & outdoor adventure resources (MVP)
   - Images of trail => complete
   - Filtering of trails by US state => complete
   - User Authentication => complete
-  - User Authorization => not started
+  - User Authorization => complete
   - Trail route map created from GPX file => in progress
   - Reviews & Ratings => not started
   - Upgrade to Rails 5.0.0.beta1 => complete
