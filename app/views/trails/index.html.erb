@@ -1,7 +1,10 @@
 <h1>Trails</h1>
 <%= render "states", states: @states %>
 <p>
-<%= link_to "Add new trail", new_trail_path %>
+<% if user_signed_in? %>
+    <%= link_to "Add new trail", new_trail_path if current_user.admin? %>
+<% end %>
+
 </p>
 
 <% if @state %>

@@ -1,5 +1,7 @@
 <h2><%= @trail.name %></h2>
-<%= link_to "Edit Trail", edit_trail_path(@trail) %>
+<% if user_signed_in? %>
+    <%= link_to "Edit Trail", edit_trail_path(@trail) if current_user.admin? %>
+<% end %>
 <%= link_to "All Trails", trails_path %>
 
 <p>
