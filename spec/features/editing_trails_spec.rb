@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Users can edit trails" do
   before do
+    login_as create(:user, :admin)
     @trail = FactoryGirl.create(:trail_one)
     visit "/"
     click_link @trail.name

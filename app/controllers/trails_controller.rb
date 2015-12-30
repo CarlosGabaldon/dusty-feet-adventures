@@ -1,6 +1,7 @@
 class TrailsController < ApplicationController
   include Uploadable
   before_action :build_lookups
+  before_action :authorize_admin!, only: [:new, :edit, :create, :update, :destroy]
 
   def index
     @trails = Trail.all
@@ -68,6 +69,14 @@ class TrailsController < ApplicationController
   end
 
   private
+  def authorize_admin!
+    authenticate_user!
+
+    unless current_user.admin?
+      redirect_to root_path, alert: "You must be an admistrator to access."
+    end
+  end
+
   def trail_params
     params.require(:trail).permit(:name, :description, :gpx_file,
       location_attributes: [:id, :lat_long_coords, :state],
