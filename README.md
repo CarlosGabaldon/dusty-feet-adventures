@@ -13,9 +13,9 @@ Trail & outdoor adventure resources (MVP)
   - Filtering of trails by US state => complete
   - User Authentication => complete
   - User Authorization => complete
-  - Trail route map created from GPX file => in progress
-  - Reviews & Ratings => not started
   - Upgrade to Rails 5.0.0.beta1 => complete
+  - Upload GPX file and parse track points to Trail#route => complete
+  - Client side Trail map created from lat_long_coords from Trail#route => not started
 
  - To Do
    - Admin trail map tool for creating:
@@ -23,3 +23,4 @@ Trail & outdoor adventure resources (MVP)
       - Trail geocode path coords (currently using google maps to copy/paste geocodes when creating a trail)
    - CSS design of site
    - Videos of trail corresponding to GPX waypoints => not started
+   - Reviews & Ratings => not started
