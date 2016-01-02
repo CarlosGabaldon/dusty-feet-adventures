@@ -2,6 +2,11 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
+## To re-build DB run ##
+# $ rails db:drop
+# $ rails db:migrate
+# $ rails db:seed
+
 
 ## User Data ##
 unless User.exists? email: "admin@parametertechnologies.com"
@@ -15,6 +20,16 @@ end
 ## Trail Data ##
 unless Trail.exists? name: "Bright Angel Trail"
   Trail.create! name: "Bright Angel Trail",
-    description: "A very busy trail that runs to the river.",
-    location_attributes: {lat_long_coords:  "34.575597, -112.427461", state: "AZ" }
+    description: "A very busy trail that runs to the Colorado river.",
+    location_attributes: {lat_long_coords:  "34.575597, -112.427461", state: "AZ" },
+    images_attributes: [{url: "https://dustyfeetadventures.files.wordpress.com/2015/11/img_0690.jpg?w=768&h=582"},
+      {url: "https://dustyfeetadventures.files.wordpress.com/2015/11/img_0698.jpg?w=768&h=576"}]
+end
+
+unless Trail.exists? name: "Thunder Mountain Trail"
+  Trail.create! name: "Thunder Mountain Trail",
+    description: "This fun and challenging route starts at the Thunder Mountain trailhead.",
+    location_attributes: {lat_long_coords:  "34.872039, -111.812251", state: "AZ" },
+    images_attributes: [{url: "https://dustyfeetadventures.files.wordpress.com/2015/04/img_0289.jpg?w=768&h=576"},
+      {url: "https://dustyfeetadventures.files.wordpress.com/2015/04/img_2513.jpg?w=768&h=576"}]
 end
