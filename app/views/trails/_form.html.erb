@@ -42,9 +42,10 @@
   <p>
     <h3>Images:</h3>
     <ol>
+      <% index = 0 %>
       <%= f.fields_for :images do |images_form| %>
         <li>
-        <%= images_form.label :url %>
+        <%= images_form.label :url, "Url ##{index += 1}" %>
         <%= images_form.text_field :url %>
         </li>
       <% end %>
