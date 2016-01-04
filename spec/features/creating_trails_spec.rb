@@ -31,7 +31,7 @@ RSpec.feature "Users can create trails" do
     select "Arizona"
     fill_in "Lat long coords", with: "32.712673, -110.768174"
     fill_in "Url #1", with: "http://www.aztrail.org/images/washingtonpark.jpg"
-    click_button "Add another image"
+    click_link "Add another image"
     fill_in "Url #2", with: "http://www.aztrail.org/images/mulesgrandcanyon.jpg"
     click_button "Add Trail"
 

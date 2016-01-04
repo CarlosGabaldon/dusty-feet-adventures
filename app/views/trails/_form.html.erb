@@ -39,17 +39,13 @@
     <%= file_field_tag "gpx_file" %>
   </p>
 
-  <p>
+  <div id="images">
     <h3>Images:</h3>
-    <ol>
-      <% index = 0 %>
-      <%= f.fields_for :images do |images_form| %>
-        <li>
-        <%= images_form.label :url, "Url ##{index += 1}" %>
-        <%= images_form.text_field :url %>
-        </li>
-      <% end %>
-    </ol>
+    <%= render partial: "images/form", locals: {f: f, index: 0} %>
+  </div>
+  <p>
+    <%= link_to "Add another image", new_image_path, remote: true,
+    id: "add_image", data: { params: {index: trail.images.size } } %>
   </p>
 
   <%= link_to "Cancel", cancel_path %>

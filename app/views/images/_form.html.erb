@@ -1,0 +1,4 @@
+<%= f.fields_for :images, child_index: index do |images_form| %>
+  <%= images_form.label :url, "Url ##{index += 1}" %>
+  <%= images_form.text_field :url %>
+<% end %>
