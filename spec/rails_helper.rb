@@ -7,19 +7,14 @@ require 'spec_helper'
 require 'rspec/rails'
 
 if ENV['TRAVIS']
-  require 'sauce'
-  require 'sauce/capybara'
-
-  # change to "Capybara.default_driver = :sauce" to use sauce
-  # for ALL feature specs, not just ones marked with "js: true"
-  Capybara.javascript_driver = :sauce
-
-  Sauce.config do |config|
-    config[:browsers] = [
-      ['Linux', 'Chrome', nil],
-      # and other OS/browser combos you want to support...
-    ]
-  end
+  require "selenium-webdriver"
+  caps = Selenium::WebDriver::Remote::Capabilities.firefox({
+  'tunnel-identifier' => ENV['TRAVIS_JOB_NUMBER']
+  })
+  driver = Selenium::WebDriver.for(:remote, {
+    url: 'http://carlosgabaldon:e11459bc-68d0-40a6-a5f7-c4452b97e0de@ondemand.saucelabs.com/wd/hub',
+    desired_capabilities: caps
+  })
 end
 
 # Add additional requires below this line. Rails is not loaded until this point!
