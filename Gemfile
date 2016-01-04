@@ -56,6 +56,13 @@ group :test do
   gem 'factory_girl_rails', '~> 4.5'
   gem 'selenium-webdriver', '~> 2.45'
   gem 'database_cleaner', '~> 1.4'
+
+  if ENV['TRAVIS']
+    # gems for sauce
+    gem 'sauce', '~> 3.1.1'
+    gem 'sauce-connect'
+    gem 'parallel_tests'
+  end
 end
 
 group :development do

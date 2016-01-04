@@ -5,6 +5,23 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+
+if ENV['TRAVIS']
+  require 'sauce'
+  require 'sauce/capybara'
+
+  # change to "Capybara.default_driver = :sauce" to use sauce
+  # for ALL feature specs, not just ones marked with "js: true"
+  Capybara.javascript_driver = :sauce
+
+  Sauce.config do |config|
+    config[:browsers] = [
+      ['Linux', 'Chrome', nil],
+      # and other OS/browser combos you want to support...
+    ]
+  end
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
