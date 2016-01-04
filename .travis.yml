@@ -14,8 +14,3 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 script:
   - bundle exec rspec spec/$TEST_SUITE/*
-
-addons:
-  sauce_connect:
-    username: "carlosgabaldon"
-    access_key: "e11459bc-68d0-40a6-a5f7-c4452b97e0de"
