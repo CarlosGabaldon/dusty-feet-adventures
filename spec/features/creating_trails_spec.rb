@@ -25,6 +25,19 @@ RSpec.feature "Users can create trails" do
     expect(page).to have_content "Description can't be blank"
   end
 
+  scenario "with images", js: true do
+    fill_in "Name", with: "Arizona Trail"
+    fill_in "Description", with: "A trail that runs from Mexico to Utah"
+    select "Arizona"
+    fill_in "Lat long coords", with: "32.712673, -110.768174"
+    fill_in "Url #1", with: "http://www.aztrail.org/images/washingtonpark.jpg"
+    click_link "Add another image"
+    fill_in "Url #2", with: "http://www.aztrail.org/images/mulesgrandcanyon.jpg"
+    click_button "Add Trail"
+
+    expect(page).to have_content "Trail Added."
+  end
+
   scenario "with GPX file" do
     fill_in "Name", with: "JMT"
     fill_in "Description", with: "The iconic trail"

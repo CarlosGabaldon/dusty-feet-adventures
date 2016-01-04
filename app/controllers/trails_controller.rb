@@ -99,6 +99,6 @@ class TrailsController < ApplicationController
   end
 
   def build_images
-    4.times {@trail.images.build}
+    @trail.images.build
   end
 end
