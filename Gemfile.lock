@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jnicklas/capybara.git
-  revision: 343f851ee09e5ee9f02be2a57f6eb97082b40081
+  revision: 4b3093f4bd12a682b41d8e88d3958d33e70f4662
   specs:
     capybara (2.6.0.dev)
       mime-types (>= 1.16)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 6431445846846f013be60a8ea6e48b9fcfe19b2d
+  revision: 9639bf8cc1378b2e526fd6d5197d3f547173bf2e
   branch: master
   specs:
     devise (3.5.3)
@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: git://github.com/rspec/rspec-core.git
-  revision: 8cb45cc8779d09b13e054ecb94c911b7e14f7fde
+  revision: e05932768e305d13669bfa2475db74b805cda097
   branch: master
   specs:
     rspec-core (3.5.0.pre)
@@ -40,7 +40,7 @@ GIT
 
 GIT
   remote: git://github.com/rspec/rspec-mocks.git
-  revision: b94e242ebbc51081fc2245e37c574f5d6d02b7f8
+  revision: 29269d483f39ce78f3614a16b2e00a2a496a482c
   branch: master
   specs:
     rspec-mocks (3.5.0.pre)
@@ -49,7 +49,7 @@ GIT
 
 GIT
   remote: git://github.com/rspec/rspec-rails.git
-  revision: 7f2b695a2e70af1aa4f78346143e71e926bbccd7
+  revision: c9fbfeea8751011f05146d9c9a4be4b038058284
   branch: master
   specs:
     rspec-rails (3.5.0.pre)
@@ -63,7 +63,7 @@ GIT
 
 GIT
   remote: git://github.com/rspec/rspec-support.git
-  revision: b0ff0f6e157288c33f8dc6d57f4ee157d43152fa
+  revision: 885e37c525b68ccca8351fe648a7826f34630318
   branch: master
   specs:
     rspec-support (3.5.0.pre)

@@ -57,7 +57,7 @@ group :test do
   gem 'selenium-webdriver', '~> 2.45'
   gem 'database_cleaner', '~> 1.4'
 
-  if ENV['TRAVIS']
+  if ENV['TRAVIS'] 
     # gems for sauce
     gem 'sauce', '~> 3.1.1'
     gem 'sauce-connect'
