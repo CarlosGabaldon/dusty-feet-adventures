@@ -23,7 +23,7 @@
 <% if @trail.route %>
   <p>
     <h3>Trail Path</h3>
-    <%= image_tag @gmap.map_with_path_uri, id: "map_path_#{@trail.id}" %>
+    <div id="map" data-location="<%= @trail.location.lat_long_coords %>" data-route="<%= @trail.route %>"></div>
   </p>
 <% end %>
 

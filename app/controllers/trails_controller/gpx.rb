@@ -28,6 +28,7 @@ class TrailsController
         trkpts = doc.xpath("//xmlns:trkpt")
         trkpts.each do |trkpt|
           route << "#{trkpt.attr('lat')}, #{trkpt.attr('lon')}|"
+          #route << "{lat: #{trkpt.attr('lat')}, lng: #{trkpt.attr('lon')}},"
         end
         route = route[0...-1]
       end

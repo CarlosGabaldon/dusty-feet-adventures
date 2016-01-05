@@ -7,6 +7,9 @@
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.configuration.x.google_js_api_key%>&callback=initMap"
+        async defer></script>
 </head>
 <body>
 <% if user_signed_in? %>

@@ -26,7 +26,7 @@ RSpec.feature "Users should be able to view trail details" do
     trail = create(:trail_with_route)
     visit '/'
     click_link trail.name
-    expect(page).to have_css "img[src*='#{trail.route}']"
+    expect(page).to have_css "div[data-route*='#{trail.route}']"
 
   end
 

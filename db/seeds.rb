@@ -21,7 +21,12 @@ end
 unless Trail.exists? name: "Bright Angel Trail"
   Trail.create! name: "Bright Angel Trail",
     description: "A very busy trail that runs to the Colorado river.",
-    location_attributes: {lat_long_coords:  "34.575597, -112.427461", state: "AZ" },
+    route: "{lat: 34.549009, lng: -112.536735},{lat: 34.550168, lng: -112.536752},
+    {lat: 34.550480, lng: -112.536408},{lat: 34.551081, lng: -112.535954},
+    {lat: 34.551267, lng: -112.535701},{lat: 34.551143, lng: -112.535205},
+    {lat: 34.550753, lng: -112.535149},{lat: 34.550178, lng: -112.535351},
+    {lat: 34.549646, lng: -112.536022},{lat: 34.549009, lng: -112.536735}",
+    location_attributes: {lat_long_coords:  "{lat:34.575597, lng:-112.427461}", state: "AZ" },
     images_attributes: [{url: "https://dustyfeetadventures.files.wordpress.com/2015/11/img_0690.jpg?w=768&h=582"},
       {url: "https://dustyfeetadventures.files.wordpress.com/2015/11/img_0698.jpg?w=768&h=576"}]
 end
