@@ -23,5 +23,5 @@ Trail & outdoor adventure resources (MVP)
       - Location geocode (lat/long) markers coords
       - Trail geocode path coords (currently using google maps to copy/paste geocodes when creating a trail)
    - CSS design of site
-   - Videos of trail corresponding to GPX waypoints => not started
+   - Videos of trail corresponding to GPX waypoints => started on [trail_map_route_js](https://github.com/CarlosGabaldon/dusty-feet-adventures/tree/trail_map_route_js)
    - Reviews & Ratings => not started
