@@ -20,17 +20,22 @@ class TrailsController
       @route ||= parse_file
     end
 
+    def route_start_point
+      ActiveSupport::JSON.encode(ActiveSupport::JSON.decode(parse_to_route)[0])
+    end
+
     private
     def parse_file
       route = ""
       if @file_path
-        doc = Nokogiri::XML(File.open(@file_path))
-        trkpts = doc.xpath("//xmlns:trkpt")
+        trkpts = Nokogiri::XML(File.open(@file_path)).xpath("//xmlns:trkpt")
+        route = "["
         trkpts.each do |trkpt|
-          route << "#{trkpt.attr('lat')}, #{trkpt.attr('lon')}|"
-          #route << "{lat: #{trkpt.attr('lat')}, lng: #{trkpt.attr('lon')}},"
+          lat, lng = trkpt.attr('lat'), trkpt.attr('lon')
+          route << "{\"lat\": #{lat}, \"lng\": #{lng}},"
         end
         route = route[0...-1]
+        route << "]"
       end
       return route
     end
