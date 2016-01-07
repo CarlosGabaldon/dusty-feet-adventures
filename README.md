@@ -15,7 +15,7 @@ Trail & outdoor adventure resources (MVP)
   - User Authorization => complete
   - Upgrade to Rails 5.0.0.beta1 => complete
   - Upload GPX file and parse track points to Trail#route => complete
-  - Client side Trail map created from lat_long_coords from Trail#route => not started
+  - Client side Trail map created from lat_long_coords from Trail#route => complete
   - Ajax image fields for new trails => complete
 
  - To Do
