@@ -25,7 +25,7 @@ class TrailsController < ApplicationController
 
   def create
     @trail = Trail.new(trail_params)
-    process_gpx
+    process_gpx!
 
     if @trail.save
       flash[:notice] = "Trail Added."
@@ -39,7 +39,7 @@ class TrailsController < ApplicationController
 
   def update
     @trail = Trail.find(params[:id])
-    process_gpx
+    process_gpx!
 
     if @trail.update(trail_params)
       flash[:notice] = "Trail Updated."
@@ -81,22 +81,20 @@ class TrailsController < ApplicationController
       images_attributes: [:id, :url])
   end
 
-  # todo
-  # 1. remove static GoogleMaps code
-  # 2. remove tests for static google maps
-  # 3. remove display for static google maps
-  # 4. review use of Trai#location.lat_long_coords in views
-
-  def process_gpx
-    if params[:gpx_file]
-      if @trail.gpx_file_path = upload_file(params[:gpx_file])
-        gpx = TrailsController::GPX.new(file_path: @trail.gpx_file_path)
-        if route = gpx.parse_to_route
-          @trail.route = route
-          @trail.location.lat_long_coords = gpx.route_start_point
-        end
+  # Converts the uploaded GPX file to trail route of JSON objects.
+  def process_gpx!
+    if @trail.gpx_file_path = upload_gpx
+      gpx = TrailsController::GPX.new(file_path: @trail.gpx_file_path)
+      if route = gpx.parse_to_route
+        @trail.route = route
+        @trail.location.lat_long_coords = gpx.route_start_point
       end
     end
+  end
+
+  # Uses the Uploadable concern to save to the file system
+  def upload_gpx
+    upload_file(params[:gpx_file]) if params[:gpx_file]
   end
 
   def build_lookups
