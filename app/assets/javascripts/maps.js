@@ -1,7 +1,7 @@
 //
 // Used to draw the google map based on:
 //  - Route of the trail: Trail#Route
-//  Which is stored in data-route value in the view:
+//  Which is stored in a data-route value in the view:
 //  - ./app/views/trails/show.html.erb
 //
 function initMap() {
@@ -11,7 +11,7 @@ function initMap() {
     var trail_head = route[0];
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 14,
+      zoom: 13,
       center: center,
       mapTypeId: google.maps.MapTypeId.HYBRID
     });

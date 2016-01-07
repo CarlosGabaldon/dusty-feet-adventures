@@ -4,15 +4,7 @@
 <% end %>
 <%= link_to "All Trails", trails_path %>
 
-<p>
-  <h3>Trail Location</h3>
-  <%= link_to @gmap.map_url, target: "_blank" do %>
-    <%= image_tag @gmap.map_with_marker_uri, id: "map_#{@trail.id}" %>
-  <% end %>
-
-  <p>Latitude, longitude: <%= @trail.location.lat_long_coords %> </p>
-
-</p>
+<p>Latitude, longitude: <%= @trail.location.lat_long_coords %> </p>
 
 <p>State: <%= @trail.location.state %></p>
 
@@ -22,8 +14,8 @@
 
 <% if @trail.route %>
   <p>
-    <h3>Trail Path</h3>
-    <div id="map" data-location="<%= @trail.location.lat_long_coords %>" data-route="<%= @trail.route %>"></div>
+    <h3>Trail Map</h3>
+    <div id="map" data-route="<%= @trail.route %>"></div>
   </p>
 <% end %>
 
