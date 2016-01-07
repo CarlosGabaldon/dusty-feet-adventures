@@ -9,8 +9,6 @@ class TrailsController < ApplicationController
 
   def show
     @trail = Trail.find(params[:id])
-    @gmap = GoogleMaps.new(marker_coords: @trail.location.lat_long_coords,
-      route_coords: @trail.route)
   end
 
   def new
@@ -79,9 +77,15 @@ class TrailsController < ApplicationController
 
   def trail_params
     params.require(:trail).permit(:name, :description, :gpx_file,
-      location_attributes: [:id, :lat_long_coords, :state],
+      location_attributes: [:id, :state],
       images_attributes: [:id, :url])
   end
+
+  # todo
+  # 1. remove static GoogleMaps code
+  # 2. remove tests for static google maps
+  # 3. remove display for static google maps
+  # 4. review use of Trai#location.lat_long_coords in views
 
   def process_gpx
     if params[:gpx_file]
@@ -89,6 +93,7 @@ class TrailsController < ApplicationController
         gpx = TrailsController::GPX.new(file_path: @trail.gpx_file_path)
         if route = gpx.parse_to_route
           @trail.route = route
+          @trail.location.lat_long_coords = gpx.route_start_point
         end
       end
     end
