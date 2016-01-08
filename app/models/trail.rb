@@ -1,4 +1,4 @@
-class Trail < ActiveRecord::Base
+class Trail < ActiveRecord::Base #:nodoc:
   belongs_to :location
   has_many :images
   accepts_nested_attributes_for :location

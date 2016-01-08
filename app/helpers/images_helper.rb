@@ -1,2 +1,2 @@
-module ImagesHelper
+module ImagesHelper #:nodoc:
 end
