@@ -1,4 +1,4 @@
-class TrailsController < ApplicationController
+class TrailsController < ApplicationController #:nodoc:
   include Uploadable
   before_action :build_lookups
   before_action :authorize_admin!,
