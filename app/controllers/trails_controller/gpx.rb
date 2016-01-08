@@ -27,7 +27,7 @@ class TrailsController
     private
 
     def parse_file
-      route = ""
+      route = ''
       if trkpts = trkpts_node
         route = build_route(trkpts)
       end
