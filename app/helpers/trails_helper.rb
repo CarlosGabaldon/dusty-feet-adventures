@@ -1,2 +1,2 @@
-module TrailsHelper
+module TrailsHelper #:nodoc:
 end

@@ -1,8 +1,7 @@
 class TrailsController < ApplicationController #:nodoc:
   include Uploadable
   before_action :build_lookups
-  before_action :authorize_admin!,
-    only: [:new, :edit, :create, :update, :destroy]
+  before_action :auth_admin!, only: [:new, :edit, :create, :update, :destroy]
 
   def index
     @trails = Trail.all
@@ -69,7 +68,7 @@ class TrailsController < ApplicationController #:nodoc:
 
   private
 
-  def authorize_admin!
+  def auth_admin!
     authenticate_user!
     return false if current_user.admin?
     redirect_to root_path, alert: 'You must be an admistrator to access.'
