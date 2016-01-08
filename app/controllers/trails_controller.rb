@@ -28,10 +28,10 @@ class TrailsController < ApplicationController
     process_gpx!
 
     if @trail.save
-      flash[:notice] = "Trail Added."
+      flash[:notice] = 'Trail Added.'
       redirect_to @trail
     else
-      flash[:alert] = "Trail not Added."
+      flash[:alert] = 'Trail not Added.'
       build_lookups
       render 'new'
     end
@@ -42,10 +42,10 @@ class TrailsController < ApplicationController
     process_gpx!
 
     if @trail.update(trail_params)
-      flash[:notice] = "Trail Updated."
+      flash[:notice] = 'Trail Updated.'
       redirect_to @trail
     else
-      flash[:alert] = "Trail not Updated."
+      flash[:alert] = 'Trail not Updated.'
       build_lookups
       render 'edit'
     end
@@ -55,7 +55,7 @@ class TrailsController < ApplicationController
     @trail = Trail.find(params[:id])
     @trail.destroy
 
-    flash[:notice] = "Trail Deleted"
+    flash[:notice] = 'Trail Deleted'
     redirect_to trails_path
   end
 
@@ -67,16 +67,17 @@ class TrailsController < ApplicationController
   end
 
   private
+
   def authorize_admin!
     authenticate_user!
-
-    unless current_user.admin?
-      redirect_to root_path, alert: "You must be an admistrator to access."
-    end
+    return false if current_user.admin?
+    redirect_to root_path, alert: 'You must be an admistrator to access.'
   end
 
   def trail_params
-    params.require(:trail).permit(:name, :description, :gpx_file,
+    params.require(:trail).permit(
+      :name,
+      :description, :gpx_file,
       location_attributes: [:id, :state],
       images_attributes: [:id, :url])
   end
