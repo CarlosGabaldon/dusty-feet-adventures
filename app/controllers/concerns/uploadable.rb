@@ -6,13 +6,17 @@
 #     @trail.gpx_file_path = upload_file(params[:gpx_file])
 module Uploadable
   def upload_file(file_name)
-    uploaded_io = file_name
-    path = ""
-    File.open(Rails.root.join('public', 'uploads',
-      uploaded_io.original_filename), 'w') do |file|
-        file.write(uploaded_io.read)
-        path = file.path
-      end
-    return path
+    path = ''
+    File.open(upload_path(file_name), 'w') do |file|
+      file.write(file_name.read)
+      path = file.path
+    end
+    path
+  end
+
+  private
+
+  def upload_path(file_name)
+    Rails.root.join('public', 'uploads', file_name.original_filename)
   end
 end
