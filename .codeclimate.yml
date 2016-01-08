@@ -21,3 +21,6 @@ exclude_paths:
 - vendor/**/*
 - db/**/*
 - config/**/*
+- "Gemfile"
+- "Rakefile"
+- "app/controllers/trails_controller/look_up.rb"
