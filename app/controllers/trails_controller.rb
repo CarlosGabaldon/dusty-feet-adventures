@@ -1,7 +1,8 @@
 class TrailsController < ApplicationController
   include Uploadable
   before_action :build_lookups
-  before_action :authorize_admin!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :authorize_admin!,
+    only: [:new, :edit, :create, :update, :destroy]
 
   def index
     @trails = Trail.all
