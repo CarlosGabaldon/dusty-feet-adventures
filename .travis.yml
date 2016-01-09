@@ -1,7 +1,6 @@
 language: ruby
 rvm:
   - 2.2.3
-
 before_install:
   - rvm @global do gem uninstall bundler -a -x
   - rvm @global do gem install bundler -v 1.10.6
@@ -9,6 +8,9 @@ env:
   - TEST_SUITE=features
   - TEST_SUITE=controllers
   - TEST_SUITE=models
+addons:
+  code_climate:
+    repo_token: 1b12973738f7041fde2f6243e1b9a153cd45358a11798a8c1994dfbf261ed983
 before_script:
   ## Required to run browser tests (FF) ##
   - export DISPLAY=:99.0
