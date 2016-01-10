@@ -23,6 +23,12 @@ FactoryGirl.define do
     name "Trail two"
   end
 
+  factory :trail_with_CA_location, class: Trail do
+    name "Trail"
+    description "Trail description"
+    association :location, factory: :location_CA
+  end
+
   factory :trail_missing_name, parent: :trail_one do
     name ""
   end
@@ -34,6 +40,10 @@ FactoryGirl.define do
 
   factory :location, class: Location do
     state "AZ"
+  end
+
+  factory :location_CA, class: Location do
+    state "CA"
   end
 
   factory :image, class: Image do
