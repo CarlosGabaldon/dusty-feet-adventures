@@ -70,6 +70,11 @@ RSpec.describe TrailsController, type: :controller do
         expect(assigns(:trail).name).to eq 'JMT'
         expect(response).to redirect_to trail_path(assigns(:trail).id)
       end
+
+      it 'renders new template for failure' do
+        post :create, params: { trail: { name: 'JMT'} }
+        expect(response).to render_template('new')
+      end
     end
 
     describe 'PATCH update' do
@@ -79,6 +84,12 @@ RSpec.describe TrailsController, type: :controller do
 
         expect(assigns(:trail).name).to eq 'Trail updated'
         expect(response).to redirect_to trail_path(assigns(:trail).id)
+      end
+
+      it 'renders edit template for failure' do
+        trail = create(:trail_one)
+        patch :update, params: { id: trail.id, trail: { name: ' ' } }
+        expect(response).to render_template('edit')
       end
     end
 
