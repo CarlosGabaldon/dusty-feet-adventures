@@ -21,9 +21,6 @@ Trail & outdoor adventure resources (MVP)
   - Ajax image fields for new trails => complete
 
  - To Do
-   - Admin trail map tool for creating:
-      - Location geocode (lat/long) markers coords
-      - Trail geocode path coords (currently using google maps to copy/paste geocodes when creating a trail)
    - CSS design of site
-   - Videos of trail corresponding to GPX waypoints => started on [trail_map_route_js](https://github.com/CarlosGabaldon/dusty-feet-adventures/tree/trail_map_route_js)
-   - Reviews & Ratings => not started
+   - Videos of trail corresponding to GPX waypoints
+   - Reviews & Ratings
