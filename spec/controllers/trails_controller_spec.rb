@@ -62,5 +62,35 @@ RSpec.describe TrailsController, type: :controller do
         expect(response).to render_template('edit')
       end
     end
+
+    describe 'POST create' do
+      it 'assigns @trail' do
+        post :create, params: { trail: { name: 'JMT', description: 'Trail'} }
+
+        expect(assigns(:trail).name).to eq 'JMT'
+        expect(response).to redirect_to trail_path(assigns(:trail).id)
+      end
+    end
+
+    describe 'PATCH update' do
+      it 'assigns @trail' do
+        trail = create(:trail_one)
+        patch :update, params: { id: trail.id, trail: { name: 'Trail updated' } }
+
+        expect(assigns(:trail).name).to eq 'Trail updated'
+        expect(response).to redirect_to trail_path(assigns(:trail).id)
+      end
+    end
+
+    describe 'DELETE destroy' do
+      it 'destroys @trail' do
+        trail = create(:trail_one)
+        expect{
+          delete :destroy, params: { id: trail }
+        }.to change(Trail, :count).by(-1)
+
+        expect(response).to redirect_to trails_path
+      end
+    end
   end
 end
