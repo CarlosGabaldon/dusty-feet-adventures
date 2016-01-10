@@ -54,6 +54,7 @@ end
 group :test do
   gem 'capybara', github: 'jnicklas/capybara'
   gem 'factory_girl_rails', '~> 4.5'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver', '~> 2.45'
   gem 'database_cleaner', '~> 1.4'
   gem "codeclimate-test-reporter", require: nil
