@@ -19,6 +19,7 @@ Trail & outdoor adventure resources (MVP)
   - Upload GPX file and parse track points to Trail#route => complete
   - Client side Trail map created from lat_long_coords from Trail#route => complete
   - Ajax image fields for new trails => complete
+  - Tagging trails => started
 
  - To Do
    - CSS design of site
