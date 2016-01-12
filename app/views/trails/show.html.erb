@@ -12,6 +12,12 @@
   <p>GPX path: <%= @trail.gpx_file_path %></p>
 <% end %>
 
+<% if @trail.tags.any? %>
+  <div id="tags">
+    <%= render @trail.tags %>
+  </div>
+<% end %>
+
 <% if @trail.route %>
   <p>
     <h3>Trail Map</h3>

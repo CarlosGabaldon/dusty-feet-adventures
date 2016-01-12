@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228145042) do
+ActiveRecord::Schema.define(version: 20160112203616) do
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20151228145042) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "state"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "tags_trails", id: false, force: :cascade do |t|
+    t.integer "tag_id",   null: false
+    t.integer "trail_id", null: false
+    t.index ["tag_id", "trail_id"], name: "index_tags_trails_on_tag_id_and_trail_id"
+    t.index ["trail_id", "tag_id"], name: "index_tags_trails_on_trail_id_and_tag_id"
   end
 
   create_table "trails", force: :cascade do |t|
