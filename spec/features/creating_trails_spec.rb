@@ -46,6 +46,21 @@ RSpec.feature "Users can create trails" do
     expect(page).to have_content "Trail Added."
   end
 
+  scenario "with associated tags" do
+    fill_in "Name", with: "JMT"
+    fill_in "Description", with: "The iconic trail"
+    select "California"
+    fill_in "Tags", with: "advanced beautiful"
+    click_button "Add Trail"
+
+    expect(page).to have_content "Trail Added."
+    within "#tags" do
+      expect(page).to have_content "advanced"
+      expect(page).to have_content "beautiful"
+    end
+
+  end
+
   scenario "when clicking cancel return to trail listing" do
     click_link "Cancel"
 
