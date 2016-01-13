@@ -51,4 +51,8 @@ FactoryGirl.define do
     association :trail, factory: :trail_one
   end
 
+  factory :tag, class: Tag do
+    name "easy"
+  end
+
 end

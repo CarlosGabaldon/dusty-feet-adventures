@@ -21,6 +21,8 @@ Trail & outdoor adventure resources (MVP)
   - Client side Trail map created from lat_long_coords from Trail#route => complete
   - Ajax image fields for new trails => complete
   - Tagging trails => started
+    - Adding tags => complete
+    - Editing/Deleting tags => started
 
  - To Do
    - CSS design of site
