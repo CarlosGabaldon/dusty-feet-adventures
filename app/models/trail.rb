@@ -15,13 +15,13 @@ class Trail < ActiveRecord::Base #:nodoc:
     @tag_names = names
     names.split.each do |name|
       tag = Tag.find_or_initialize_by(name: name)
-      self.tags << tag unless self.tags.include?(tag)
+      tags << tag unless tags.include?(tag)
     end
   end
 
   def tag_names
-    @tag_names = ""
-    self.tags.each do |tag|
+    @tag_names = ''
+    tags.each do |tag|
       @tag_names << "#{tag.name} "
     end
     @tag_names
