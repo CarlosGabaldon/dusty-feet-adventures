@@ -24,9 +24,24 @@ RSpec.describe Trail, type: :model do
     expect(filtered_trails[0].location.state).to eq all_trails[0].location.state
   end
 
-  it "has tag_names" do
+  it "tag_names virtual attribute updates tags" do
     trail = create(:trail_one)
     trail.tag_names = "adavanced fun"
     expect(trail.tags.count).to eq 2
+  end
+
+  it "tag_names virtual attribute does not add duplicates tags" do
+    trail = create(:trail_one)
+    trail.tag_names = "advanced advanced fun"
+    expect(trail.tags.count).to eq 2
+  end
+
+  it "tag_names virtual attribute returns string of tags" do
+    trail = create(:trail_one)
+    trail.tags << create(:tag, name: "advanced")
+    trail.tags << create(:tag, name: "fun")
+    trail.save
+
+    expect(trail.tag_names).to eq "advanced fun "
   end
 end
