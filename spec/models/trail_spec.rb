@@ -23,4 +23,10 @@ RSpec.describe Trail, type: :model do
     expect(filtered_trails.length).to eq 1
     expect(filtered_trails[0].location.state).to eq all_trails[0].location.state
   end
+
+  it "has tag_names" do
+    trail = create(:trail_one)
+    trail.tag_names = "adavanced fun"
+    expect(trail.tags.count).to eq 2
+  end
 end
