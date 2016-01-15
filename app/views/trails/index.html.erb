@@ -1,24 +1,26 @@
-<h1>Trails</h1>
-<%= render "states", states: @states %>
-<p>
-<% if user_signed_in? %>
-    <%= link_to "Add new trail", new_trail_path if current_user.admin? %>
-<% end %>
+<header>
+  <h1>Trails</h1>
 
-</p>
+  <ul class="actions">
+    <% if user_signed_in? %>
+      <li><%= link_to "Add new trail", new_trail_path,
+          class: "new" if current_user.admin? %></li>
+    <% end %>
+  </ul>
+</header>
+<%= render "states", states: @states %>
+
 
 <% if @state %>
   <h3>State: <%= @state %> </h3>
 <% end %>
 
-<ol>
+<div id="trails">
   <% @trails.each do |trail| %>
-    <li>
-      <%= link_to trail.name, trail_path(trail) %> <br>
+      <h2><%= link_to trail.name, trail_path(trail) %> </h2>
       <% if trail.images.any? %>
-        <%= image_tag trail.images.first.url, size: "400x300" %>
+        <p><%= image_tag trail.images.first.url, size: "400x300" %></p>
       <% end %>
       <p>Trail Location: <%= trail.location.state %></p>
-    </li>
   <% end %>
-</ol>
+</div>

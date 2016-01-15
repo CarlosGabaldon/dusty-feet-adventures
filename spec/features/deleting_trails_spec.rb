@@ -9,7 +9,7 @@ RSpec.feature "Users can delete trails" do
     visit "/"
     click_link @trails.first.name
     click_link "Edit Trail"
-    click_button "Delete Trail"
+    click_link "Delete Trail"
 
     expect(page.current_url).to eq trails_url
   end

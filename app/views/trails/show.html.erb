@@ -1,8 +1,15 @@
-<h2><%= @trail.name %></h2>
-<% if user_signed_in? %>
-    <%= link_to "Edit Trail", edit_trail_path(@trail) if current_user.admin? %>
-<% end %>
-<%= link_to "All Trails", trails_path %>
+<header>
+  <h1><%= @trail.name %></h1>
+
+  <ul class="actions">
+    <% if user_signed_in? %>
+      <li><%= link_to "Edit Trail",  edit_trail_path(@trail),
+          class: "edit" if current_user.admin? %></li>
+    <% end %>
+    <li><%= link_to "All Trails", trails_path, class: "list" %></li>
+  </ul>
+</header>
+
 
 <p>Latitude, longitude: <%= @trail.location.lat_long_coords %> </p>
 

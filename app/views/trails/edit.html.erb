@@ -1,7 +1,12 @@
-<h1>Edit Trail</h1>
+<header>
+  <h1>Edit Trail</h1>
+  <ul class="actions">
+    <li><%= link_to "Delete Trail",
+      @trail,
+      method: :delete,
+      data: { confirm: "Are you sure?" },
+      class: "delete" %></li>
+  </ul>
+</header>
 
 <%= render "form", trail: @trail, action: "Update", cancel_path: trail_path %>
-
-<h2>Danager Zone</h2>
-
-<%= button_to "Delete Trail", @trail, method: :delete, data: { confirm: "Are you sure?" } %>
