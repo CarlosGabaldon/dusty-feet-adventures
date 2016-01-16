@@ -1,13 +1,6 @@
 engines:
   rubocop:
     enabled: true
-    exclude_fingerprints:
-    - 8e859c605ce727c8f2df29edeb0fb5fd
-    checks:
-      Rubocop/Lint/AssignmentInCondition:
-        enabled: false
-      Rubocop/Rails/HasAndBelongsToMany:
-        enabled: false
   golint:
     enabled: true
   eslint:
