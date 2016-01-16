@@ -22,3 +22,22 @@ html, body {
   height: 50%;
   width: 50%;
 }
+
+.tag {
+  @extend .label;
+  @extend .label-info;
+  font-size: 12px;
+  padding: 0.3em 0.6em;
+  margin-right: 10px;
+
+  a{
+    color: white;
+
+    &.remove {
+      font-family: "FontAwesome";
+      @extend .fa-close;
+      margin-right: 0.5em;
+      text-decoration: none;
+    }
+  }
+}
