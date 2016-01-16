@@ -2,7 +2,7 @@ engines:
   rubocop:
     enabled: true
     exclude_fingerprints:
-    - d5f030d9e184225629412adeca50f2c2
+    - 8e859c605ce727c8f2df29edeb0fb5fd
     checks:
       Rubocop/Lint/AssignmentInCondition:
         enabled: false

@@ -84,7 +84,8 @@ class TrailsController < ApplicationController #:nodoc:
 
   # Converts the uploaded GPX file to trail route of JSON objects.
   def process_gpx!
-    TrailGPXProcessor.new(@trail).process_route!(TrailsController::GPX, upload_gpx)
+    trail_gpx_processor = TrailGPXProcessor.new(@trail)
+    trail_gpx_processor.process_route!(TrailsController::GPX, upload_gpx)
   end
 
   # Uses the Uploadable concern to save to the file system

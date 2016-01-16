@@ -1,5 +1,5 @@
+# Handles the business logic of saving route details to a trail
 class TrailGPXProcessor
-
   def initialize(trail)
     @trail = trail
   end
