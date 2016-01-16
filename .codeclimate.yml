@@ -1,8 +1,6 @@
 engines:
   rubocop:
     enabled: true
-      Rubocop/Rails/HasAndBelongsToMany:
-        enabled: false
   golint:
     enabled: true
   eslint:
