@@ -1,4 +1,4 @@
-class TagsController < ApplicationController
+class TagsController < ApplicationController #:nodoc:
   def remove
     @trail = Trail.find(params[:trail_id])
     @tag = Tag.find(params[:id])
