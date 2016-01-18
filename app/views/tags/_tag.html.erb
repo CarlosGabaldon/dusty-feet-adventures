@@ -1,4 +1,8 @@
 <div class="tag">
-  <%= link_to "<span></span>".html_safe, "#", class: "remove", title: "remove" %>
+  <% if user_signed_in? %>
+    <%= link_to "<span></span>".html_safe,
+     remove_trail_tag_path(trail, tag), method: :delete, remote: true,
+     class: "remove", title: "remove" if current_user.admin? %>
+  <% end %>
   <%= tag.name %>
 </div>

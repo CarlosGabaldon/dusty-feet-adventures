@@ -21,7 +21,7 @@
 
 <% if @trail.tags.any? %>
   <div id="tags">
-    <%= render @trail.tags %>
+    <%= render @trail.tags, trail: @trail %>
   </div>
 <% end %>
 

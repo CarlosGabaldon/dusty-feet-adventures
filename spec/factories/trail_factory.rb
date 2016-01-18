@@ -36,6 +36,10 @@ FactoryGirl.define do
   factory :trail_with_route, parent: :trail do
     route  "34.549089, -112.537448|34.551259, -112.535793"
   end
+
+  factory :trail_with_tag_names, parent: :trail do
+    tag_names "tag_1"
+  end
  # End Trail factories
 
   factory :location, class: Location do
