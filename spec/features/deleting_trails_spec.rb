@@ -6,11 +6,10 @@ RSpec.feature "Users can delete trails" do
     @trails = [create(:trail, name: "Trail 1"), create(:trail, name: "Trail 2")]
   end
   scenario "when clicking on delete trail" do
-    visit "/"
-    click_link @trails.first.name
-    click_link "Edit Trail"
+    visit edit_trail_path(@trails.first)
     click_link "Delete Trail"
 
     expect(page.current_url).to eq trails_url
+    expect(page).to_not have_content "Trail 1"
   end
 end
