@@ -2,6 +2,14 @@
   <h1>Trails</h1>
 
   <ul class="actions">
+    <li>
+      <%= form_tag search_trails_path, method: :get,
+        class: "form-inline" do %>
+        <%= label_tag "search", "Search", class: "sr-only" %>
+        <%= text_field_tag "search", params[:search], class: "form-control" %>
+        <%= submit_tag "Search", class: "btn btn-default" %>
+      <% end %>
+    </li>
     <% if user_signed_in? %>
       <li><%= link_to "Add new trail", new_trail_path,
           class: "new" if current_user.admin? %></li>

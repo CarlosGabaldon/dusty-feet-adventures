@@ -66,6 +66,15 @@ class TrailsController < ApplicationController #:nodoc:
     render 'index'
   end
 
+  def search
+    if params[:search].present?
+      @trails = Trail.search(params[:search])
+    else
+      @trails = Trail.all
+    end
+    render 'index'
+  end
+
   private
 
   def auth_admin!

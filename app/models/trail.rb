@@ -11,6 +11,12 @@ class Trail < ActiveRecord::Base #:nodoc:
     joins(:location).where('locations.state = ?', state)
   }
 
+  # Adding scope for now and only support searching by tag
+  # In future add more extensive searching support
+  scope :search, lambda { |tag|
+    joins(:tags).where('tags.name = ?', tag)
+  }
+
   def tag_names=(names)
     @tag_names = names
     names.split.each do |name|
