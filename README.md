@@ -28,5 +28,5 @@ Trail & outdoor adventure resources (MVP)
     - Searching tags => complete
 
  - To Do
-   - Videos of trail corresponding to GPX waypoints
-   - Reviews & Ratings
+   - [Reviews & Ratings](https://github.com/CarlosGabaldon/dusty-feet-adventures/issues/5)
+   - [Videos of trail corresponding to GPX waypoints](https://github.com/CarlosGabaldon/dusty-feet-adventures/issues/28)
