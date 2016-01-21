@@ -21,10 +21,11 @@ Trail & outdoor adventure resources (MVP)
   - Client side Trail map created from lat_long_coords from Trail#route => complete
   - Ajax image fields for new trails => complete
   - CSS design of site
-  - Tagging trails => in progress
+  - Tagging trails => complete
     - Adding tags => complete
     - Editing tags => complete
-    - Deleting tags => in progress
+    - Deleting tags => complete
+    - Searching tags => complete
 
  - To Do
    - Videos of trail corresponding to GPX waypoints
