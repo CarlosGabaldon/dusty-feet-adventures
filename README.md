@@ -34,3 +34,4 @@ Trail & outdoor adventure resources (MVP)
 
 Development environment setup & How to Guides
   - [Are you using Gemsets?](https://carlosgabaldon.wordpress.com/articles/are-you-using-gemsets/)
+  - [Rails install on Mac](http://railsapps.github.io/installrubyonrails-mac.html)
