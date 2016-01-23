@@ -8,14 +8,16 @@ FactoryGirl.define do
 
   factory :trail_one, parent: :trail do
     name "Trail one"
-    factory :trail_with_images do
-      transient do
-        images_count 5
-      end
+    route  "34.549089, -112.537448|34.551259, -112.535793"
+  end
 
-      after(:create) do |trail, evaluator|
-        create_list(:image, evaluator.images_count, trail: trail)
-      end
+  factory :trail_with_images, parent: :trail_one do
+    transient do
+      images_count 5
+    end
+
+    after(:create) do |trail, evaluator|
+      create_list(:image, evaluator.images_count, trail: trail)
     end
   end
 
