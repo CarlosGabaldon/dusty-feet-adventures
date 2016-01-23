@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Users can search for trails matching specific criteria" do
   before do
-    @trails = [create(:trail_two, name: "Trail 1", tag_names: "tag_1"),
-      create(:trail_two, name: "Trail 2", tag_names: "tag_2")]
+    @trails = [create(:trail, name: "Trail 1", tag_names: "tag_1"),
+      create(:trail, name: "Trail 2", tag_names: "tag_2")]
     visit "/"
   end
 

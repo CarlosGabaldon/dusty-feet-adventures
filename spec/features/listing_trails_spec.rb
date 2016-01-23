@@ -2,7 +2,8 @@ require "rails_helper"
 
 RSpec.feature "Users can view trail listings" do
   before do
-    @trails = [create(:trail_with_images), create(:trail_two)]
+    @trails = [create(:trail_with_images, name: 'Trail one'),
+      create(:trail, name: 'Trail two')]
   end
 
   scenario "when visting the home page" do

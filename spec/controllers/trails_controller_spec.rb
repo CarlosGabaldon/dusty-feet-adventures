@@ -19,7 +19,7 @@ RSpec.describe TrailsController, type: :controller do
 
   describe 'GET show' do
     it 'assigns @trail' do
-      trail = create(:trail_one)
+      trail = create(:trail)
       get :show, params: {id: trail.id }
       expect(assigns(:trail)).to eq trail
       expect(response).to render_template('show')
@@ -55,7 +55,7 @@ RSpec.describe TrailsController, type: :controller do
 
     describe 'GET edit' do
       it 'assigns @trail' do
-        trail = create(:trail_one)
+        trail = create(:trail)
         get :edit, params: {id: trail.id }
 
         expect(assigns(:trail)).to eq trail
@@ -79,7 +79,7 @@ RSpec.describe TrailsController, type: :controller do
 
     describe 'PATCH update' do
       it 'assigns @trail' do
-        trail = create(:trail_one)
+        trail = create(:trail)
         patch :update, params: { id: trail.id, trail: { name: 'Trail updated' } }
 
         expect(assigns(:trail).name).to eq 'Trail updated'
@@ -87,7 +87,7 @@ RSpec.describe TrailsController, type: :controller do
       end
 
       it 'renders edit template for failure' do
-        trail = create(:trail_one)
+        trail = create(:trail)
         patch :update, params: { id: trail.id, trail: { name: ' ' } }
         expect(response).to render_template('edit')
       end
@@ -95,7 +95,7 @@ RSpec.describe TrailsController, type: :controller do
 
     describe 'DELETE destroy' do
       it 'destroys @trail' do
-        trail = create(:trail_one)
+        trail = create(:trail)
         expect{
           delete :destroy, params: { id: trail }
         }.to change(Trail, :count).by(-1)
