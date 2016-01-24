@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Trail, type: :model do
+  let(:trail) {create(:trail)}
+
   it "is valid with name, description, and location" do
-    trail = create(:trail)
     expect(trail).to be_valid
   end
 
@@ -25,23 +26,18 @@ RSpec.describe Trail, type: :model do
   end
 
   it "tag_names virtual attribute updates tags" do
-    trail = create(:trail)
     trail.tag_names = "adavanced fun"
     expect(trail.tags.count).to eq 2
   end
 
   it "tag_names virtual attribute does not add duplicates tags" do
-    trail = create(:trail)
     trail.tag_names = "advanced advanced fun"
     expect(trail.tags.count).to eq 2
   end
 
   it "tag_names virtual attribute returns string of tags" do
-    trail = create(:trail)
     trail.tags << create(:tag, name: "advanced")
     trail.tags << create(:tag, name: "fun")
-    trail.save
-
     expect(trail.tag_names).to eq "advanced fun "
   end
 end
