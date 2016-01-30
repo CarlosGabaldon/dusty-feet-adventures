@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "Users should be able to view trail details" do
+  let(:author) { create(:user) }
   before do
-    @trail = create(:trail_with_images)
+    @trail = create(:trail_with_images, author: author)
     visit '/'
     click_link @trail.name
   end

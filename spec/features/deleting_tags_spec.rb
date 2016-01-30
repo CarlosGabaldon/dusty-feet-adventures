@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature "Users can delete tags from a trail" do
-  let(:user) {create(:user, admin: true)}
-  let(:trail) {create(:trail_with_tag_names)}
+  let(:author) {create(:user, admin: true)}
+  let(:trail) {create(:trail_with_tag_names, author: author)}
 
   before do
-    login_as user
+    login_as author
     visit trail_path(trail)
   end
 

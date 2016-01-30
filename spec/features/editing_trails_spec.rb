@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "Users can edit trails" do
+  let(:author) { create(:user, :admin) }
   before do
-    login_as create(:user, :admin)
-    @trail = create(:trail)
+    login_as author
+    @trail = create(:trail, author: author)
     @trail.tags << create(:tag, name: "advanced")
     @trail.tags << create(:tag, name: "fun")
     @trail.save

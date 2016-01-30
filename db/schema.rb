@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112203616) do
+ActiveRecord::Schema.define(version: 20160130190919) do
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20160112203616) do
     t.string   "location_id"
     t.text     "route"
     t.string   "gpx_file_path"
+    t.integer  "author_id"
+    t.index ["author_id"], name: "index_trails_on_author_id"
     t.index ["location_id"], name: "index_trails_on_location_id"
   end
 

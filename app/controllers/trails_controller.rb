@@ -25,6 +25,7 @@ class TrailsController < ApplicationController #:nodoc:
 
   def create
     @trail = Trail.new(trail_params)
+    @trail.author = current_user
     process_gpx!
 
     if @trail.save

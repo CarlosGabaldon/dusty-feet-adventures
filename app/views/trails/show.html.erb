@@ -10,6 +10,16 @@
   </ul>
 </header>
 
+<table id ="attributes">
+  <tr>
+    <th>Author:</th>
+    <td><%= @trail.author.email %></td>
+  </tr>
+  <tr>
+    <th>Created:</th>
+    <td><%= time_ago_in_words(@trail.created_at) %> ago</td>
+  </tr>
+</table>
 
 <p>Latitude, longitude: <%= @trail.location.lat_long_coords %> </p>
 

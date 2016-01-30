@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "Users can create trails" do
+  let(:user){ create(:user, :admin) }
+
   before do
-    login_as create(:user, :admin)
+    login_as user
     visit "/"
     click_link "Add new trail"
   end
@@ -13,6 +15,10 @@ RSpec.feature "Users can create trails" do
     click_button "Add Trail"
 
     expect(page).to have_content "Trail Added."
+
+    within("#attributes") do
+      expect(page).to have_content "Author: #{user.email}"
+    end
 
   end
 
