@@ -26,6 +26,9 @@ Trail & outdoor adventure resources (MVP)
     - Editing tags => complete
     - Deleting tags => complete
     - Searching tags => complete
+  - [Who created a trail](https://github.com/CarlosGabaldon/dusty-feet-adventures/pull/29) => complete
+    - email
+    - date
 
  - To Do
    - [Reviews & Ratings](https://github.com/CarlosGabaldon/dusty-feet-adventures/issues/5)
