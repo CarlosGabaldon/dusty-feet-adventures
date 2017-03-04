@@ -5,7 +5,7 @@
 [![Test Coverage](https://codeclimate.com/github/CarlosGabaldon/dusty-feet-adventures/badges/coverage.svg)](https://codeclimate.com/github/CarlosGabaldon/dusty-feet-adventures/coverage)
 [![Issue Count](https://codeclimate.com/github/CarlosGabaldon/dusty-feet-adventures/badges/issue_count.svg)](https://codeclimate.com/github/CarlosGabaldon/dusty-feet-adventures)
 
-http://dustyfeetadventures.com/
+https://dustyfeetadventures.wordpress.com/
 
 Trail & outdoor adventure resources (MVP)
  - Trail information
